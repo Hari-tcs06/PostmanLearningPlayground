@@ -1,0 +1,95 @@
+{
+	"info": {
+		"_postman_id": "77f32525-98f2-4a09-a5a5-bae5224925f3",
+		"name": "Learning Playground",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "ReqRes Tutorial",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"//pm.test(\"Response time is less than 200ms\", function () {\r",
+							"  //  pm.expect(pm.response.responseTime).to.be.below(800);\r",
+							"//});\r",
+							"//\r",
+							"\r",
+							"pm.test(\"Successful POST request\", function () {\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);\r",
+							"});\r",
+							"\r",
+							"pm.environment.get(\"variable_key\");\r",
+							"pm.globals.get(\"variable_key\");\r",
+							"pm.variables.get(\"variable_key\");\r",
+							"pm.environment.set(\"variable_key\", \"variable_value\");\r",
+							"pm.collectionVariables.get(\"variable_key\");\r",
+							"pm.globals.unset(\"variable_key\");\r",
+							"\r",
+							"pm.sendRequest(\"https://postman-echo.com/get\", function (err, response) {\r",
+							"    console.log(response.json());\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Content-Type is present\", function () {\r",
+							"    pm.response.to.have.header(\"Content-Type\");\r",
+							"});\r",
+							"\r",
+							"// Load the response body into a variable\r",
+							"var jsonData = pm.response.json();\r",
+							"\r",
+							"\r",
+							"// Use the `pm.test` function to validate a field in the JSON message\r",
+							"pm.test(\"Field exists in response 1\", function () {\r",
+							"    pm.expect(jsonData).to.have.property(\"name\");\r",
+							"});\r",
+							"\r",
+							"// Use the `pm.test` function to validate the value of a field in the JSON message\r",
+							"pm.test(\"Field has correct value 1\", function () {\r",
+							"    pm.expect(jsonData.name).to.be.a('string');\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Field exists in response 2\", function () {\r",
+							"    pm.expect(jsonData).to.have.property(\"id\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Field has correct value 2\", function () {\r",
+							"    pm.expect(jsonData.id).to.be.a('string');\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"id": "0a235206-cc3e-460a-9829-c538f1011105"
+					}
+				}
+			],
+			"_postman_id": "9d88cfb4-6557-4521-a52f-ed90958a1b77",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"{{name}}\",\r\n    \"job\": \"{{job}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://reqres.in/api/users"
+			},
+			"response": []
+		}
+	]
+}
