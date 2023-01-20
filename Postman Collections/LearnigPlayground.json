@@ -11,6 +11,7 @@
 				{
 					"listen": "test",
 					"script": {
+						"id": "0a235206-cc3e-460a-9829-c538f1011105",
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {\r",
 							"    pm.response.to.have.status(201);\r",
@@ -66,12 +67,11 @@
 							"});\r",
 							""
 						],
-						"type": "text/javascript",
-						"id": "0a235206-cc3e-460a-9829-c538f1011105"
+						"type": "text/javascript"
 					}
 				}
 			],
-			"_postman_id": "9d88cfb4-6557-4521-a52f-ed90958a1b77",
+			"id": "9d88cfb4-6557-4521-a52f-ed90958a1b77",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -80,7 +80,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"{{name}}\",\r\n    \"job\": \"{{job}}\"\r\n}",
+					"raw": "{\r\n    \"name\": \"{{name}}\",\r\n    \"job\": \"{{job}}\"\r\n    8\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
